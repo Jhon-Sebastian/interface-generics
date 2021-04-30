@@ -12,6 +12,6 @@ package org.century.poointerfaces.repositorio;
     Solo como prueba, para entender que se puede hacer
 
  */
-public interface OrdenablePaginableCrudRepositorio extends CrudRepository,
-        OrdenableRepositorio, PaginableRepositorio, ContableRepositorio{
+public interface OrdenablePaginableCrudRepositorio<T> extends CrudRepository<T>,
+        OrdenableRepositorio<T>, PaginableRepositorio<T>, ContableRepositorio{
 }

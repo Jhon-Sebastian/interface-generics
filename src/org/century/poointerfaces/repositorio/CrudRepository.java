@@ -4,9 +4,22 @@ import org.century.poointerfaces.modelo.Cliente;
 
 import java.util.List;
 
-public interface CrudRepository {
+public interface CrudRepository<T> {
 
-    List<Cliente> listar();
+    //Con genericos poder hacer toda la funcionanlidad pero con Productos , Clientes etc
+    List<T> listar();
+
+    T obtenerPorId(Integer id);
+
+    void crear(T objeto);
+
+    void editar(T objeto);
+
+    void eliminar(Integer id);
+}
+
+  /* Antes de los Genericos, mas acoplado a un solo tipo de dato
+      List<Cliente> listar();
 
     Cliente obtenerPorId(Integer id);
 
@@ -16,3 +29,4 @@ public interface CrudRepository {
 
     void eliminarCliente(Integer id);
 }
+   */
