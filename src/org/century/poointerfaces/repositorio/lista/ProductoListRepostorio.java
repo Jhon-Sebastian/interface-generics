@@ -3,13 +3,14 @@ package org.century.poointerfaces.repositorio.lista;
 import org.century.poointerfaces.modelo.Producto;
 import org.century.poointerfaces.repositorio.AbstractaListRepositorio;
 import org.century.poointerfaces.repositorio.Direccion;
+import org.century.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoListRepostorio extends AbstractaListRepositorio<Producto> {
     @Override
-    public void editar(Producto producto) {
+    public void editar(Producto producto) throws LecturaAccesoDatoException {
         Producto p = obtenerPorId(producto.getId());
         p.setDescripcion(producto.getDescripcion());
         p.setPrecio(producto.getPrecio());
